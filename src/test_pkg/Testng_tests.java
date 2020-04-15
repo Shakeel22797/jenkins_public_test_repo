@@ -13,7 +13,7 @@ public class Testng_tests {
 	public void testing(){
 		System.out.println("Test Started");
 	System.setProperty("webdriver.chrome.driver", "./Webdriver/chromedriver");
-	System.out.println("Craeting Chrome options object");
+	System.out.println("Creating Chrome options object");
 	ChromeOptions options = new ChromeOptions();
 	System.out.println("adding arguments");
 	options.addArguments("start-maximized");
@@ -24,6 +24,7 @@ public class Testng_tests {
 	WebDriver driver=new ChromeDriver(options);
 	System.out.println("Opening Browser");
 	String Urls= "https://www.espncricinfo.com/";
+		System.out.println("Browser Opening Now");
 	driver.get(Urls);
 		System.out.println("Browser Opened Successfully");
 

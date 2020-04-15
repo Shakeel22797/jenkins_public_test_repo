@@ -5,16 +5,34 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
+import jdk.nashorn.internal.runtime.ECMAException;
+
 public class Testng_tests {
 
 	@Test
 	public void testing(){
-	System.setProperty("webdriver.chrome.driver", ".\\Webdriver\\chromedriver.exe");
+		System.out.println("Test Started");
+	System.setProperty("webdriver.chrome.driver", "./Webdriver/chromedriver");
+	System.out.println("Craeting Chrome options object");
 	ChromeOptions options = new ChromeOptions();
+	System.out.println("adding arguments");
 	options.addArguments("start-maximized");
 	options.addArguments("disable-infobars");
+	options.addArguments("headless");
+	System.out.println("Creating driver");
+	try {
 	WebDriver driver=new ChromeDriver(options);
+	System.out.println("Opening Browser");
 	String Urls= "https://www.espncricinfo.com/";
 	driver.get(Urls);
+		System.out.println("Browser Opened Successfully");
+
+	}
+	catch(Exception e) {
+		System.out.println(e);
+		
+	}
+			System.out.println("Test Completed Successfully");
+
 }
 }
